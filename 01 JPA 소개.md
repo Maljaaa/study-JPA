@@ -67,24 +67,24 @@ JPA를 사용하면 객체를 데이터베이스에 저장하고 관리할 때, 
 **JPA가 제공하는 API**를 사용하면 된다.
 
 * 저장기능 - persist()
-```
+```java
 jpa.persist(member);  // 저장
 ```
 
 * 조회 기능 - find()
-```
+```java
 String emeberId = "helloId";
 Member member = jpa.find(Member.class, memberId); //조회
 ```
 
 * 수정 기능
-```
+```java
 Member member = jpa.find(Member.class, memberId);
 member.setName("이름변경"); //수정
 ```
 
 * 연관된 객체 조회
-```
+```java
 Member member = jpa.find(Member.class, memberId);
 Team team = member.getTeam(); //연관된 객체 조회
 ```
