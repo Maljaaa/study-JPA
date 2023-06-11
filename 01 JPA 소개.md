@@ -163,6 +163,28 @@ class Team {
   String name;
 }
 ```
+객체를 테이블에 맞추어 모델링하면 객체를 테이블에 저장하거나 조회할 때는 편리하다.  
+객체는 참조가 있는 방향으로만 조회할 수 있으므로 객체의 참조를 잘 보관해야하는 어려움이 있다.  
+따라서 TEAM_ID 외래 키의 값을 그대로 보관하는 teamId 필드에는 문제가 있다.  
+이런 방식을 따르면 객체지향의 특징을 잃어버리게 된다.  
+
+#### 객체지향 모델링
+```java
+class Member {
+  String id;
+  Team team;
+  String username;
+  
+  Team getTeam() {
+    return team;
+  }
+}
+
+class Team {
+  Long id;
+  String name;
+}
+```
 
 
 ### 객체 그래프 탐색
