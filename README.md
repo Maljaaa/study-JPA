@@ -10,6 +10,7 @@
 
 ## 활동
 - 2023.06.11 (일) chapter 1
+- 2023.06.18 (일) chapter 2
 
 ## 참고 자료
 https://github.com/backend-sprout/jpa-basic
