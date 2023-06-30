@@ -106,7 +106,55 @@ gradle에서 사용하기 위해서는 JPA에서 사용할 엔티티 클래스�
   - 종료  
   사용이 끝난 엔티티 매니저는 반드시 종료해야 한다.
 
-* 트랜잭션 관리
+* 트랜잭션 관리  
+  트랜잭션을 시작하려면 엔티티 매니저에서 트랜잭션 API를 받아와야 한다.  
+  트랜잭션 API를 사용해서 비즈니스 로직이 정상 동작하면 `커밋(commit)`하고 예외가 발생하면 `롤백(rollback)`한다.  
+  
+* 비즈니스 로직  
+엔티티 매니저를 통해 데이터베이스에 등록, 수정, 삭제, 조회한다.
+```java
+//비즈니스 로직
+    private static void logic(EntityManager entityManager){
+        String id = "id1";
+        Member member = new Member();
+        member.setId(id);
+        member.setUsername("승민");
+        member.setAge(26);
+
+        // 등록
+        entityManager.persist(member);
+
+        // 수정
+        member.setAge(24);
+
+        // 한 건 조회
+        Member findMember = entityManager.find(Member.class, id);
+        System.out.println("findMember = " + findMember.getUsername() + ", age = " + findMember.getAge());
+
+        // 목록 조회
+        List<Member> memberList = entityManager.createQuery("select m from Member m", Member.class)
+                .getResultList();
+        System.out.println("memberList.size = " + memberList.size());
+
+        // 삭제
+        entityManager.remove(member);
+    }
+```
+
+* JPQL  
+```java
+// 목록 조회
+TypedQuery<member> query = em.createQuery("select m from Member m", Member.class);
+List<Member> members = query.getResultList();
+```
+
+검색 조건이 포함된 SQL을 사용할 때 JPA는 JPQL(Java Persistence Query Language)라는 쿼리 언어로 문제를 해결한다.  
+**JPQL vs SQL**  
+JPQL은 **엔티티 객체**를 대상으로 쿼리한다.  
+SQL은 **데이터베이스 테이블**을 대상으로 쿼리한다.  
+JPQL은 데이터베이스 테이블을 전혀 알지 못한다.  
+
+> 여기서 from Member는 회원 엔티티를 객체를 말하는 것이지 MEMBER 테이블이 아니다!!  
   
 
 
