@@ -33,7 +33,13 @@ build.gradle
 ![클래스와 테이블 매핑](https://lh3.googleusercontent.com/pw/ACtC-3dR9wnUXYz7fApGFwk79lfrcIlAwFvraFhEmDrNzTNZi3hvyrp2J0xzNnhUO3Aqn2QTXXB7Ftgl4ebAW1eL2FayGP2UBKxWsjRt80jji1CwHaLuRbmDw_6GMAUQwKy2cCY0oFkF6cAdyrKQ6YWZthPQMg=w1053-h243-no?authuser=0)
 
 * @Entity  
-- @Entity가 사용된 클래스를 엔티티 클래스라고 한다.
+  - @Entity가 사용된 클래스를 엔티티 클래스라고 한다.
+
+* @Table  
+  - 엔티티 클래스에 매핑할 테이블 정보를 알려준다.
+
+* @Id  
+  - 엔티티 클래스의 필드를 테이블의 기본 키(Primary key)에 매핑한다.
 
 
 
