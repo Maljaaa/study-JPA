@@ -6,11 +6,12 @@
 
 ## 목표
 - JPA 기초 이론, 핵심 원리 익히기
-- 스프링 데이터 JPA, QueryDSL과ㅗ 같은 오픈 소스를 활용하여 자바 웹 애플리케이션을 효과적으로 개발하기
+- 스프링 데이터 JPA, QueryDSL과 같은 오픈 소스를 활용하여 자바 웹 애플리케이션을 효과적으로 개발하기
 
 ## 활동
 - 2023.06.11 (일) chapter 1
 - 2023.06.30 (금) chapter 2
+- 2023.07.03 (월) chapter 3
 
 ## 참고 자료
 https://github.com/backend-sprout/jpa-basic
